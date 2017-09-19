@@ -38,7 +38,7 @@ color = 0xFF0000        # 'On' color (starts red)
 for i in range(0, numpixels):
     if i > 90:
 	    strip.setPixelColor(i, color)
-	else:
+    else:
 	    strip.setPixelColor(i, 0)
 
 strip.show()                     # Refresh strip
