@@ -9,6 +9,8 @@ var options = {
   }
 }
 var Jimp = require("jimp");
+const rgbHex = require('rgb-hex');
+
 
 //http://localhost:8080/index.html
 webshot('http://localhost:8080/index.html', 'yomap.png', options, function(err) {
@@ -29,6 +31,8 @@ function findrgb(){
     console.log('pixelColor', pixelColor);
     var pixelColorRGB = Jimp.intToRGBA(pixelColor);
     console.log('pixelColorRGB',pixelColorRGB);
+    console.log('r',pixelColorRGB.r);
+    console.log('hex:',rgbHex(pixelColorRGB.r, pixelColorRGB.g, pixelColorRGB.b));
   }).catch(function (err) {
     // handle an exception
     console.log(err);
