@@ -36,6 +36,9 @@ tail  = -10             # Index of last 'off' pixel
 color = 0xFF0000        # 'On' color (starts red)
 
 for i in range(0, numpixels):
-	strip.setPixelColor(i, color) # Turn on 'head' pixel
+    if i > 90:
+	    strip.setPixelColor(i, color)
+	else:
+	    strip.setPixelColor(i, 0)
 
 strip.show()                     # Refresh strip
