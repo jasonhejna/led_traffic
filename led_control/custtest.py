@@ -50,7 +50,7 @@ pixels = [  #x, y
 # For each pixel
 for i in range(0, numpixels):
     if i < 6:
-        value = imgpixels[i][0, 1]   # Read pixel in image
+        value = imgpixels[pixels[i][0], pixels[i][1]]   # Read pixel in image
         print value
         print gamma[value[0]], gamma[value[1]], gamma[value[2]]
         strip.setPixelColor(i, # Set pixel in strip
