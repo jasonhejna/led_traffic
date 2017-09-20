@@ -40,6 +40,7 @@ while True:                              # Loop forever
 	for x in range(width):           # For each column of image...
 		for y in range(height):  # For each pixel in column...
 			value = pixels[x, y]   # Read pixel in image
+			print value
 			strip.setPixelColor(y, # Set pixel in strip
 			  gamma[value[0]],     # Gamma-corrected red
 			  gamma[value[1]],     # Gamma-corrected green
