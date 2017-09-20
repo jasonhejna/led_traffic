@@ -33,8 +33,6 @@ for i in range(256):
 # This requires about 200 mA for all the 'on' pixels + 1 mA per 'off' pixel.
 
 #color = 0xFF0000        # 'On' color (starts red)
-x = 495
-y = 231
 
 pixels = [  #x, y
     [877, 699],
@@ -67,12 +65,24 @@ pixels = [  #x, y
     [905, 557],
     [905, 548],
     [904, 539],
-    [901, 530]
+    [901, 530],
+    [869, 493],
+    [874, 494],
+    [878, 495],
+    [882, 496],
+    [885, 498],
+    [888, 499],
+    [891, 502],
+    [894, 504],
+    [895, 506],
+    [897, 510],
+    [897, 513],
+    [898, 518]
 ]
 
 # For each pixel
-for i in range(0, numpixels):
-    if i < 27:
+for i in range(numpixels):
+    if i < 40:
         value = imgpixels[pixels[i][0], pixels[i][1]]   # Read pixel in image
         print value
         print gamma[value[0]], gamma[value[1]], gamma[value[2]]
