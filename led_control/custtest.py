@@ -28,14 +28,20 @@ strip     = Adafruit_DotStar(numpixels, datapin, clockpin)
 strip.begin()           # Initialize pins for output
 strip.setBrightness(64) # Limit brightness to ~1/4 duty cycle
 
-# Runs 10 LEDs at a time along strip, cycling through red, green and blue.
+# Calculate gamma correction table, makes mid-range colors look 'right':
+gamma = bytearray(256)
+for i in range(256):
+	gamma[i] = int(pow(float(i) / 255.0, 2.7) * 255.0 + 0.5)
+
 # This requires about 200 mA for all the 'on' pixels + 1 mA per 'off' pixel.
 
+#color = 0xFF0000        # 'On' color (starts red)
 color = 0xC7DFB7
 
+# For each pixel
 for i in range(0, numpixels):
     if i > 90:
-	    strip.setPixelColor(i, color)
+	    strip.setPixelColor(i, 199, 223, 183)    # Red, Green, Blue
     else:
 	    strip.setPixelColor(i, 0)
 
