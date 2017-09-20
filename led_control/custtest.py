@@ -15,7 +15,7 @@ numpixels = 180 # Number of LEDs in strip
 # Load image in RGB format and get dimensions:
 filename  = "../yomap.png" # Image file to load
 img       = Image.open(filename).convert("RGB")
-pixels    = img.load()
+imgpixels    = img.load()
 
 # Here's how to control the strip from any two GPIO pins:
 datapin   = 23
@@ -36,10 +36,21 @@ for i in range(256):
 x = 495
 y = 231
 
+pixels = [  #x, y
+    [970, 459],
+    [949, 470],
+    [939, 477],
+    [928, 488],
+    [902, 507],
+    [899, 519],
+    [904, 538],
+    [906, 568]
+]
+
 # For each pixel
 for i in range(0, numpixels):
-    if i < 90:
-        value = pixels[x, y]   # Read pixel in image
+    if i < 6:
+        value = imgpixels[i][x, y]   # Read pixel in image
         print value
         print gamma[value[0]], gamma[value[1]], gamma[value[2]]
         strip.setPixelColor(i, # Set pixel in strip
