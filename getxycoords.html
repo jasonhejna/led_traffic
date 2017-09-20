@@ -6,6 +6,7 @@
 coordinates :
 <div id="coordinates">0</div>
 <script>
+    var holdAllXY = [];
     var livexy = [0,0];
     $(function(){
         $(document).mousemove(function(e){
@@ -15,6 +16,15 @@ coordinates :
     })
     $(document).click(function() {
         console.log(livexy);
+        holdAllXY.push(livexy);
     });
+
+    function printallxy(){
+        return JSON.stringify(holdAllXY);
+    }
+    function clearallxy(){
+        holdAllXY = [];
+        return 'cleared';
+    }
 </script>
 </html>
