@@ -6,8 +6,8 @@
     <title>Traffic layer</title>
     <style>
       html, body, #map-canvas {
-        width: 1920px;
-        height: 1080px;
+        width: 1080px;
+        height: 720px;
         margin: 0px;
         padding: 0px
       }
@@ -36,14 +36,14 @@ function initialize() {
       featureType: "road",
       elementType: "geometry.fill",
       stylers: [
-        { color: "#8A2BE2" }
+        { color: "#000000" }
       ]
     },
     {
       featureType: "road",
       elementType: "geometry.stroke",
       stylers: [
-        { color: "#551A8B" }
+        { color: "#000000" }
     ]
     },
     {
@@ -64,21 +64,21 @@ function initialize() {
       featureType: "poi",
       elementType: "geometry",
       stylers: [
-        { color: "#551A8B" }
+        { color: "#19d6c9" }
       ]
     },
     {
       featureType: "water",
       elementType: "labels",
       stylers: [
-        { visibility: "off" }
+        { color: "#1582db" }
       ]
     },
     {
       featureType: "water",
       elementType: "geometry",
       stylers: [
-        { color: "#2E0854" }
+        { color: "#1582db" }
       ]
     }
   ];
@@ -87,7 +87,7 @@ function initialize() {
   {name: "Styled Map"});
 
   // set center of map here...
-  var myLatlng = new google.maps.LatLng(33.789420, -84.372940);
+  var myLatlng = new google.maps.LatLng(33.807131, -84.373970);
   var mapOptions = {
     zoom: 12,
     center: myLatlng,
