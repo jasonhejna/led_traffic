@@ -42,10 +42,7 @@ for i in range(0, numpixels):
         value = pixels[x, y]   # Read pixel in image
         print value
         print gamma[value[0]], gamma[value[1]], gamma[value[2]]
-        strip.setPixelColor(i, # Set pixel in strip
-          27,     # Gamma-corrected red
-          206,     # Gamma-corrected green
-          14)     # Gamma-corrected blue
+        strip.setPixelColor(i, 0x1BCE0E)
     else:
 	    strip.setPixelColor(i, 0)
 
