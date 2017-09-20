@@ -1,0 +1,15 @@
+<html>
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+<img src="yomap.png" id="image" >
+coordinates :
+<div id="coordinates">0</div>
+<script>
+    $(function(){
+        $(document).mousemove(function(e){
+            $('#coordinates').html('x: ' + e.pageX + ' y : ' + e.pageY);
+        });
+    })
+</script>
+</html>
