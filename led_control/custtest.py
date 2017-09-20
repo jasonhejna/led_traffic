@@ -38,7 +38,7 @@ pixels = [[1323,346],[1323,342],[1323,338],[1324,331],[1325,326],[1326,321],[132
 
 # For each pixel
 for i in range(numpixels):
-    if i < 40:
+    if i < 66:
         value = imgpixels[pixels[i][0], pixels[i][1]]   # Read pixel in image
         print value
         print gamma[value[0]], gamma[value[1]], gamma[value[2]]
