@@ -41,7 +41,7 @@ color = 0xC7DFB7
 # For each pixel
 for i in range(0, numpixels):
     if i > 90:
-	    strip.setPixelColor(i, gamma[199], gamma[223], gamma[183])    # Red, Green, Blue
+	    strip.setPixelColor(i, gamma[74], gamma[207], gamma[227])    # Red, Green, Blue
     else:
 	    strip.setPixelColor(i, 0)
 
