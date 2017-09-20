@@ -6,10 +6,15 @@
 coordinates :
 <div id="coordinates">0</div>
 <script>
+    var livexy = [0,0];
     $(function(){
         $(document).mousemove(function(e){
+            livexy = [e.pageX, e.pageY]
             $('#coordinates').html('x: ' + e.pageX + ' y : ' + e.pageY);
         });
     })
+    $(document).click(function() {
+        console.log(livexy);
+    });
 </script>
 </html>
