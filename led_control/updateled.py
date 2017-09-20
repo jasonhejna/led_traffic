@@ -10,7 +10,7 @@ from pixel_coord_data import main_strand
 numpixels = 180 # Number of LEDs in strip
 
 # Load image in RGB format and get dimensions:
-filename  = "../yomap.png" # Image file to load
+filename  = "yomap.png" # Image file to load
 img       = Image.open(filename).convert("RGB")
 imgpixels    = img.load()
 

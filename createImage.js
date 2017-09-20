@@ -14,7 +14,7 @@ var options = {
 }
 
 function createImage() {
-  webshot('http://localhost:8080/index.html', 'yomap.png', options, function (err) {
+  webshot('http://localhost:8080/index.html', 'led_control/yomap.png', options, function (err) {
     if (err) {
       console.log(err);
       return;
