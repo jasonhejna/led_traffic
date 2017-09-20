@@ -19,6 +19,7 @@ datapin   = 23
 clockpin  = 24
 strip     = Adafruit_DotStar(numpixels, datapin, clockpin)
 
+# Initialize LED strip
 strip.begin()           # Initialize pins for output
 strip.setBrightness(64) # Limit brightness to ~1/4 duty cycle
 
@@ -27,14 +28,15 @@ gamma = bytearray(256)
 for i in range(256):
 	gamma[i] = int(pow(float(i) / 255.0, 2.7) * 255.0 + 0.5)
 
+# Grab x,y pixel coord data from pixel_coord_data.py
 pixels = main_strand()
 
 # For each LED pixel
 for i in range(numpixels):
     if i < 66:
         value = imgpixels[pixels[i][0], pixels[i][1]]   # Read pixel in image
-        print value
-        print gamma[value[0]], gamma[value[1]], gamma[value[2]]
+        #print value
+        #print gamma[value[1]], gamma[value[0]], gamma[value[2]]
         strip.setPixelColor(i, # Set pixel in strip
           gamma[value[1]],     # Gamma-corrected green
           gamma[value[0]],     # Gamma-corrected red
