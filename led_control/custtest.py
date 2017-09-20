@@ -7,23 +7,20 @@
 # and color of LEDs, it's reasonably safe to power a couple meters off
 # USB.  DON'T try that with other code!
 
-import time
+import Image
 from dotstar import Adafruit_DotStar
 
 numpixels = 180 # Number of LEDs in strip
+
+# Load image in RGB format and get dimensions:
+filename  = "../yomap.png" # Image file to load
+img       = Image.open(filename).convert("RGB")
+pixels    = img.load()
 
 # Here's how to control the strip from any two GPIO pins:
 datapin   = 23
 clockpin  = 24
 strip     = Adafruit_DotStar(numpixels, datapin, clockpin)
-
-# Alternate ways of declaring strip:
-# strip   = Adafruit_DotStar(numpixels)           # Use SPI (pins 10=MOSI, 11=SCLK)
-# strip   = Adafruit_DotStar(numpixels, 32000000) # SPI @ ~32 MHz
-# strip   = Adafruit_DotStar()                    # SPI, No pixel buffer
-# strip   = Adafruit_DotStar(32000000)            # 32 MHz SPI, no pixel buf
-# See image-pov.py for explanation of no-pixel-buffer use.
-# Append "order='gbr'" to declaration for proper colors w/older DotStar strips)
 
 strip.begin()           # Initialize pins for output
 strip.setBrightness(64) # Limit brightness to ~1/4 duty cycle
@@ -36,12 +33,17 @@ for i in range(256):
 # This requires about 200 mA for all the 'on' pixels + 1 mA per 'off' pixel.
 
 #color = 0xFF0000        # 'On' color (starts red)
-color = 0xC7DFB7
+x = 495
+y = 231
 
 # For each pixel
 for i in range(0, numpixels):
-    if i > 90:
-	    strip.setPixelColor(i, gamma[74], gamma[207], gamma[227])    # Red, Green, Blue
+    if i < 90:
+        value = pixels[x, y]   # Read pixel in image
+        strip.setPixelColor(i, # Set pixel in strip
+          gamma[value[0]],     # Gamma-corrected red
+          gamma[value[1]],     # Gamma-corrected green
+          gamma[value[2]])     # Gamma-corrected blue
     else:
 	    strip.setPixelColor(i, 0)
 
