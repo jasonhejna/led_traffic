@@ -12,15 +12,16 @@ var Jimp = require("jimp");
 const rgbHex = require('rgb-hex');
 
 
-//http://localhost:8080/index.html
-webshot('http://localhost:8080/index.html', 'yomap.png', options, function(err) {
-  if (err) {
-    console.log(err);
-    return;
-  }
-  findrgb();
-  // screenshot now saved to google.png
-});
+function createImage() {
+  webshot('http://localhost:8080/index.html', 'yomap.png', options, function (err) {
+    if (err) {
+      console.log(err);
+      return;
+    }
+    findrgb();
+    // screenshot now saved to yomap.png
+  });
+}
 
 function findrgb(){
   Jimp.read("./yomap.png").then(function (image) {
@@ -38,3 +39,4 @@ function findrgb(){
     console.log(err);
   });
 }
+findrgb();
