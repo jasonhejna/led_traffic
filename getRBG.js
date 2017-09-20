@@ -26,8 +26,8 @@ function createImage() {
 function findrgb(){
   Jimp.read("./yomap.png").then(function (image) {
     // do stuff with the image
-    var x = 311;
-    var y = 124;
+    var x = 540;
+    var y = 69;
     var pixelColor = image.getPixelColor(x, y);
     console.log('pixelColor', pixelColor);
     var pixelColorRGB = Jimp.intToRGBA(pixelColor);
