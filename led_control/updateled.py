@@ -33,7 +33,7 @@ pixels = main_strand()
 
 # For each LED pixel
 for i in range(numpixels):
-    if i < 66:
+    if i < 7:
         value = imgpixels[pixels[i][0], pixels[i][1]]   # Read pixel in image
         #print value
         #print gamma[value[1]], gamma[value[0]], gamma[value[2]]
