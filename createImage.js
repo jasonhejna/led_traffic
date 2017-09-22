@@ -14,7 +14,7 @@ var options = {
 }
 
 function createImage() {
-  webshot('http://localhost:8080/index.html', 'led_control/yomap.png', options, function (err) {
+  webshot('http://localhost:8080/index.html', '/home/pi/led_traffic/led_control/yomap.png', options, function (err) {
     if (err) {
       console.log(err);
       return;
@@ -27,7 +27,7 @@ function createImage() {
 
 function runPython() {
   cmd.get(
-      'sudo python led_control/updateled.py',
+      'sudo python /home/pi/led_traffic/led_control/updateled.py',
       function(err, data, stderr){
         console.log('err:', err);
         console.log('stderr:', stderr);
