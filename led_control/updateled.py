@@ -7,7 +7,7 @@ import Image
 from dotstar import Adafruit_DotStar
 from pixel_coord_data import main_strand
 
-numpixels = 180 # Number of LEDs in strip
+numpixels = 149 # Number of LEDs in strip
 
 # Load image in RGB format and get dimensions:
 filename  = "/home/pi/led_traffic/led_control/yomap.png" # Image file to load
